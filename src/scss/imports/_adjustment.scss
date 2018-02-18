@@ -1,0 +1,139 @@
+$main-color: #00e0d0;
+$container-width: 960px;
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    min-height: 100vh;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: 'RobotoRegular', sans-serif;
+    font-size: 14px;
+}
+
+.maincontent {
+    flex: 1 0;
+}
+
+.container {
+    width: $container-width;
+    margin: 0 auto;
+
+    @include responsive(1230px){
+        width: 960px;
+    }
+
+    @include responsive(1041px){
+        width: 970px;
+    }
+
+    @include medium{
+        width: 750px;
+    }
+
+    @include small{
+        width: auto;
+    }
+}
+
+.button{
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 10px;
+    width: 118px;
+    height: 38px;
+    border: 1px solid $main-color;
+    border-radius: 2px;
+    color: $main-color;
+    font-family: 'Hammersmithone';
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 127px;
+    text-align: center;
+    &:hover{
+        border: 1px solid #ffffff;
+        color: #ffffff;
+    }
+    &--left{
+        margin: 0;
+    }
+}
+
+.section-title-wrap {
+    text-align: center;
+    max-width: 690px;
+    margin: 0 auto;
+
+}
+
+.section__title {
+    margin: 0;
+    padding: 0;
+    font-family: 'PlayfairDisplayBold', sans-serif;
+    color:  #413d4b;
+    font-size: 22px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section__descr {
+    color:  rgba(47, 45, 53, 0.75);
+    font-size: 14px;
+    font-family: 'PlayfairDisplayRegular', sans-serif;
+    position: relative;
+    margin: 0 0 100px 0;
+    padding: 12px 0 20px 0;
+
+        &:after, &:before {
+        content: '';
+        position: absolute;
+        width: 5%;
+        height: 2px;
+        background: rgba(65, 61, 75, 0.3);
+        bottom: 0;
+    }
+        &:before{
+            right: 50%;
+        }
+
+        &:after{
+            left: 50%;
+        }
+}
+
+.hover-overlay-params {
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include size(100%, 100%);
+    background:rgba(14, 180, 147, 0.9);
+    padding: 20px;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    background: rgba(0, 0, 0, .4);
+}
+
+.overlay--active {
+    display: block;
+}
+
+.body-fixed{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
