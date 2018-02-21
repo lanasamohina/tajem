@@ -3,19 +3,23 @@
 **********/
 
 .hero {
-    height: 670px;
+    min-height: 670px;
     position: relative;
     background: url("../img/background.jpg");
     background-size: cover;
+
+    @include small{
+        min-height: 620px;
+    }
 }
 
 .hero__content {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 210px;
+    top: 225px;
 
-    @include small{
+    @include responsive(800px){
         width: 100%;
     }
 }
@@ -29,17 +33,16 @@
     background: transparent;
     width: 100%;
 
-
-    @include responsive(651px){
+    @include responsive(801px){
         padding: 20px 0;
     }
 }
-
 
 .inner-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10px;
 }
 
 .logo__link {
@@ -59,14 +62,15 @@
     @include flexCenter;
     display: none;
 
-    @include responsive(651px){
+    @include responsive(801px){
         display: flex;
     }
 }
 
 .nav{
     transition: transform .2s ease-in-out;
-    @include responsive(651px){
+    z-index: 99;
+    @include responsive(801px){
         will-change: transform;
         position: fixed;
         top: 0;
@@ -74,12 +78,11 @@
         @include size(230px, 100vh);
         background: $main-color;
         transform: translateX(-100%);
-
     }
 }
 
 .nav--active{
-    @include responsive(651px){
+    @include responsive(801px){
         transform: translateX(0);
     }
 }
@@ -90,16 +93,16 @@
     list-style: none;
     display: flex;
 
-    @include responsive(651px){
+    @include responsive(801px){
         flex-flow: column nowrap;
     }
 }
 
 .nav__item {
     &:not(:last-child) {
-        margin-right: 25px;
+        margin-right: 26px;
 
-        @include responsive(651px){
+        @include responsive(801px){
             margin: 0 0 10px 0;
         }
     }
@@ -113,7 +116,7 @@
     font-size: 13px;
     color: #fff;
     display: block;
-    padding: 28px 0;
+    padding: 33px 0;
     transition: color .2s ease-in-out;
 
     &:before {
@@ -134,12 +137,12 @@
     &:hover {
         color: $main-color;
 
-        @include responsive(651px){
+        @include responsive(801px){
             color: #ffffff;
         }
     }
 
-    @include responsive(651px){
+    @include responsive(801px){
         padding-left: 30px;
         font-size: 18px;
 
@@ -156,7 +159,7 @@
 
 .hero-title-wrap {
     text-align: center;
-    max-width: 690px;
+    max-width: 771px;
     margin: 0 auto;
 
 }
@@ -169,7 +172,24 @@
     font-size: 32px;
     margin-bottom: 10px;
     margin-top: 0;
+    letter-spacing: 0.5px;
     display: inline-block;
+
+    @include responsive(850px){
+        font-size: 28px;
+    }
+
+    @include small{
+        font-size: 24px;
+    }
+
+    @include responsive(450px){
+        font-size: 20px;
+    }
+
+    @include responsive(360px){
+        font-size: 16px;
+    }
 
     &:after, &:before {
         content: '';
@@ -193,17 +213,34 @@
     font-size: 14px;
     line-height: 24px;
     font-family: 'RobotoLight', sans-serif;
-    margin-bottom: 50px;
+    margin-bottom: 47px;
+    letter-spacing: 0.69px;
+
+    @include responsive(850px){
+        padding: 0 20px;
+    }
+
+    @include small{
+        font-size: 12px;
+    }
+
+    @include responsive(360px){
+        font-size: 10px;
+    }
 }
 
-
 .hero__slider-dots-list{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 127px;
+    justify-content: center;
+
+    @include small{
+        margin-top: 60px;
+    }
 }
 
 .hero__slider-dots-item{

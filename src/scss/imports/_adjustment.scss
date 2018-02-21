@@ -26,44 +26,93 @@ body {
     width: $container-width;
     margin: 0 auto;
 
-    @include responsive(1230px){
+    @include large{
         width: 960px;
     }
 
-    @include responsive(1041px){
-        width: 970px;
+    @include responsive(1000px){
+        width: 860px;
     }
 
-    @include medium{
+    @include responsive(900px){
         width: 750px;
     }
+
+    @include responsive(800px){
+        width: 650px;
+    }
+
 
     @include small{
         width: auto;
     }
 }
 
-.button{
+.button {
     display: block;
     margin: 0 auto;
     text-decoration: none;
     padding: 10px;
-    width: 118px;
-    height: 38px;
+    @include size(118px, 38px);
     border: 1px solid $main-color;
     border-radius: 2px;
     color: $main-color;
-    font-family: 'Hammersmithone';
+    background: none;
+    font-family: 'Hammersmithone', sans-serif;
     font-size: 16px;
     text-transform: uppercase;
-    margin-bottom: 127px;
     text-align: center;
-    &:hover{
+
+    @include small {
+        @include size(112px, 32px);
+        font-size: 14px;
+    }
+
+    @include responsive(360px){
+        @include size(90px, 30px);
+        font-size: 12px;
+    }
+    &:hover {
         border: 1px solid #ffffff;
         color: #ffffff;
+
+        @include small {
+            border: 1px solid $main-color;
+            color: $main-color;
+            &:active{
+                border: 1px solid #ffffff;
+                color: #ffffff;
+            }
+        }
     }
-    &--left{
+
+    &--left {
         margin: 0;
+        @include responsive(710px) {
+            margin: 0 auto;
+        }
+    }
+    &--long {
+        width: 138px;
+        @include small{
+            width: 125px;
+        }
+    }
+    &--white-background {
+        &:hover {
+            color: #413d4b;
+            border: 1px solid #413d4b;
+
+            @include small {
+                border: 1px solid $main-color;
+                color: $main-color;
+
+                &:active{
+                    color: #413d4b;
+                    border: 1px solid #413d4b;
+                }
+            }
+        }
     }
 }
 
@@ -71,7 +120,6 @@ body {
     text-align: center;
     max-width: 690px;
     margin: 0 auto;
-
 }
 
 .section__title {
@@ -82,6 +130,16 @@ body {
     font-size: 22px;
     display: inline-block;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    @include exSmall{
+        font-size: 18px;
+    }
+    &--team{
+        color: #ffffff
+    }
+    &--contact-us{
+        margin-bottom: 35px;
+    }
 }
 
 .section__descr {
@@ -89,24 +147,33 @@ body {
     font-size: 14px;
     font-family: 'PlayfairDisplayRegular', sans-serif;
     position: relative;
-    margin: 0 0 100px 0;
-    padding: 12px 0 20px 0;
+    padding: 10px 0 20px 0;
+    margin: 0;
+    letter-spacing: 1px;
 
-        &:after, &:before {
+    @include responsive(450px){
+        letter-spacing: 0;
+    }
+    &:after, &:before {
         content: '';
         position: absolute;
-        width: 5%;
+        width: 4%;
         height: 2px;
         background: rgba(65, 61, 75, 0.3);
         bottom: 0;
     }
-        &:before{
-            right: 50%;
+    &:before{
+        right: 50%;
+    }
+    &:after{
+        left: 50%;
+    }
+    &--team{
+        color:  #f9f9f9;
+        &:after, &:before{
+            background:  rgba(255, 255, 255, 0.2);
         }
-
-        &:after{
-            left: 50%;
-        }
+    }
 }
 
 .hover-overlay-params {

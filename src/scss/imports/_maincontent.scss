@@ -8,35 +8,65 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 70px 0;
+  margin: 69px 0;
+
+  @include responsive(768px){
+    padding: 0 20px;
+  }
 }
 
 .about__logo{
-  width: 390px;
+  width: 38%;
   margin: 0 auto;
+  text-align: center;
+
+  @include responsive(900px){
+    text-align: left;
+  }
+
+  @include responsive(710px){
+    display: none;
+  }
 }
 
 .about__story{
-  width: 570px;
-  padding-left: 20px;
+  width: 62%;
+  padding-left: 45px;
+
+  @include responsive(900px){
+    padding-left: 0;
+  }
+
+  @include responsive(700px){
+    padding-left: 20px;
+  }
+
+  @include responsive(710px){
+    width: 100%;
+    text-align: center;
+  }
 
   &-title{
     font-family: "PlayfairDisplayBold", sans-serif;
     color:  #403d4b;
     font-size: 22px;
     text-transform: uppercase;
-    margin: 0 0 25px 0;
+    margin: 0 0 15px 0;
     padding: 0;
   }
 
   &-descr{
     padding: 0;
-    margin: 0;
     font-family: "RobotoLight", sans-serif;
     color:  #403d4b;
     font-size: 14px;
     line-height: 22px;
-    margin-bottom: 30px;
+    margin: 14px 0 27px 0;
+    letter-spacing: 0.5px;
+
+    @include exSmall{
+      font-size: 12px;
+    }
   }
 }
 
@@ -45,12 +75,13 @@
 ************/
 
 .video{
-  @include size(100%, 550px);
+  width: 100%;
+  min-height: 550px;
   background: url("../img/video_background.jpg");
   background-size: cover;
   display: flex;
   flex-flow: row nowrap;
-  margin-bottom: 71px;
+  margin-bottom: 68px;
 }
 
 .video-container{
@@ -74,7 +105,7 @@
 .expertise__list{
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 81px 0 21px 0;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -87,16 +118,17 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   text-align: center;
-  margin-bottom: 79px;
+  margin-bottom: 76px;
 }
 
 .expertise__title{
   padding: 0;
-  margin: 35px 0 25px 0;
+  margin: 31px 0 17px 0;
   font-family: 'RobotoBold', sans-serif;
   color: #413d4b;
   font-size: 14px;
   text-transform: uppercase;
+  letter-spacing: 0.7px;
 }
 
 .expertise__descr{
@@ -104,6 +136,8 @@
   color:  rgba(51, 51, 51, 0.75);
   font-size: 14px;
   line-height: 22px;
+  letter-spacing: 0.7px;
+  margin: 0;
 }
 
 /************
@@ -113,8 +147,354 @@
 .team{
   background: url("../img/background.jpg");
   background-size: cover;
-  @include size(100%, 712px);
+  width: 100%;
+  min-height: 712px;
   position: relative;
   margin-top: 4px;
+  padding: 69px 0 0 0;
+
+  @include responsive(1000px){
+    padding-bottom: 40px;
+  }
 }
+
+.team__list{
+  list-style: none;
+  margin: 45px 0 70px 0 ;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.team__item{
+  border: 1px solid rgba(124, 120, 144, .5);
+  @include size(220px, 307px);
+  text-align: center;
+  text-transform: uppercase;
+
+  @include responsive(1000px){
+    margin-bottom: 20px;
+  }
+}
+
+.team__title{
+  font-family: 'RobotoBold', sans-serif;
+  color:  #ffffff;
+  font-size: 14px;
+  padding: 16px 0 8px 0;
+  margin: 0;
+}
+
+.team__descr{
+  font-family: 'RobotoLight', sans-serif;
+  color:  rgba(250, 250, 250, 0.7);
+  font-size: 13px;
+  margin: 0;
+}
+
+.team__join-us{
+  font-family: 'RobotoLight', sans-serif;
+  text-align: center;
+  color:  #f3f3f3;
+  font-size: 14px;
+  margin-bottom: 28px;
+  letter-spacing: 0.8px;
+}
+
+/************
+*****Works***
+************/
+
+.works{
+  margin: 64px 0 71px 0;
+}
+
+.works__title-wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.works__title{
+  margin: 0;
+  padding: 0;
+  font-family: 'PlayfairDisplayBold', sans-serif;
+  color: #413d4b;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.works__link{
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color:  rgba(65, 61, 75, 0.5);
+  font-size: 14px;
+  display: block;
+  letter-spacing: 0.5px;
+
+  &:after{
+    content: "";
+    background: url("../img/right.svg") center center no-repeat;
+    width: 10px;
+    height: 11px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+.works__list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 1602px;
+  list-style: none;
+  padding: 0;
+  margin: 68px auto 73px auto;
+
+}
+
+.works__item-link{
+  display: block;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+/**************
+**People say***
+***************/
+
+
+.people-say{
+  width: 100%;
+  min-height: 500px;
+  background: url("../img/background.jpg");
+  background-size: cover;
+  text-align: center;
+  padding: 85px 0 62px 0;
+}
+
+.people-say__title{
+  display: block;
+  font-family: 'PlayfairDisplayRegular', sans-serif;
+  color:  #ffffff;
+  font-size: 100px;
+  line-height: 45px;
+  margin-bottom: 4px;
+
+  @include responsive(840px){
+    font-size: 80px;
+  }
+}
+
+.people-say__descr{
+  padding: 0;
+  margin: 0 auto 40px auto;
+  max-width: 770px;
+  font-family: 'PlayfairDisplayRegular', sans-serif;
+  color:  #ffffff;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 0.45px;
+
+  @include responsive(840px){
+    padding: 0 20px;
+    font-size: 14px;
+  }
+}
+
+.people-say__name, .people-say__job{
+  display: block;
+  text-transform: uppercase;
+  color:  #ffffff;
+  line-height: 22px;
+}
+
+.people-say__name{
+  font-size: 14px;
+  font-family: 'RobotoBold', sans-serif;
+
+  @include responsive(840px){
+    font-size: 12px;
+  }
+}
+
+.people-say__job{
+ font-size: 13px;
+  font-family: 'RobotoLight', sans-serif;
+  margin-bottom: 45px;
+
+  @include responsive(840px){
+    font-size: 12px;
+  }
+}
+
+.people-say__slider{
+  display: flex;
+  flex-flow: row nowrap;
+  width: 395px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+
+  @include responsive(450px){
+    width: 320px;
+  }
+
+  @include responsive(340px){
+    width: 300px;
+  }
+
+  @include responsive(330px){
+    width: 150px;
+  }
+}
+
+.fa-chevron-left, .fa-chevron-right{
+  color: #7f7d89;
+  font-size: 26px;
+}
+
+.fa-chevron-left{
+  margin-right: 20px;
+
+  @include responsive(450px){
+    margin-right: 10px;
+  }
+
+  @include responsive(340px){
+    margin-right: 5px;
+  }
+}
+
+.fa-chevron-right{
+  margin-left: 20px;
+
+  @include responsive(450px){
+    margin-left: 10px;
+  }
+
+  @include responsive(340px){
+    margin-left: 5px;
+  }
+}
+
+.people-say__slider__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 397px;
+  justify-content: space-around;
+  align-items: center;
+  @include responsive(330px){
+    display: none;
+  }
+}
+
+.people-say__img{
+  border-radius: 50%;
+}
+
+.people-say__slider-prev, .people-say__slider-next{
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/***********
+**Contact***
+************/
+
+.news{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin: 66px auto 70px auto;
+}
+
+.contact-us{
+  width: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  padding-right: 10px;
+  &--textarea{
+    padding-bottom: 22px;
+  }
+
+  @include responsive(801px){
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.contact-us__input{
+  margin-bottom: 21px;
+  padding: 15px 0 13px 18px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  font-family: 'RobotoLight', sans-serif;
+  color:  rgba(65, 61, 75, 0.5);
+  font-size: 14px;
+  &--textarea{
+    padding-bottom: 18px;
+  }
+  @include placeholder{
+    font-family: 'RobotoLight', sans-serif;
+    color:  rgba(65, 61, 75, 0.5);
+    font-size: 14px;
+  }
+}
+
+.client{
+  width: 50%;
+  padding-left: 90px;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+
+  @include responsive(1041px){
+    padding-left: 45px;
+  }
+
+  @include responsive(900px){
+    padding-left: 30px;
+  }
+  @include responsive(801px){
+    display: none;
+  }
+}
+
+.client__list{
+  list-style: none;
+  padding: 0;
+  margin: 0 ;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  &--1{
+    margin-right: 78px;
+    @include responsive(1041px){
+      margin-right: 60px;
+    }
+
+    @include responsive(900px){
+      margin-right: 30px;
+    }
+  }
+}
+
+.client__item{
+  margin-bottom: 43px;
+}
+
+
+
 
