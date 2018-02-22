@@ -3,8 +3,6 @@
 * Basic page needs
 *
 **/
-@import url("https://use.fontawesome.com/releases/v5.0.6/css/all.css");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
 @font-face {
   font-family: "PlayfairDisplayRegular";
   src: url("../fonts/PlayfairDisplayRegular/PlayfairDisplayRegular.eot");
@@ -1286,6 +1284,22 @@ body {
   height: 307px;
   text-align: center;
   text-transform: uppercase;
+  position: relative;
+}
+
+.team__item:hover .team__item-link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2) url("../img/eye_white.svg") center center no-repeat;
+}
+
+.team__item .team__item-link {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1384,6 +1398,21 @@ body {
   margin: 68px auto 73px auto;
 }
 
+.works__item {
+  position: relative;
+}
+
+.works__item:hover .works__item-link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 224, 208, 0.3) url("../img/eye_white.svg") center center no-repeat;
+}
+
 .works__item-link {
   display: block;
   padding: 0;
@@ -1458,7 +1487,7 @@ body {
 .people-say__job {
   font-size: 13px;
   font-family: 'RobotoLight', sans-serif;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 840px) {
@@ -1502,43 +1531,6 @@ body {
   }
 }
 
-.fa-chevron-left, .fa-chevron-right {
-  color: #7f7d89;
-  font-size: 26px;
-}
-
-.fa-chevron-left {
-  margin-right: 20px;
-}
-
-@media screen and (max-width: 450px) {
-  .fa-chevron-left {
-    margin-right: 10px;
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .fa-chevron-left {
-    margin-right: 5px;
-  }
-}
-
-.fa-chevron-right {
-  margin-left: 20px;
-}
-
-@media screen and (max-width: 450px) {
-  .fa-chevron-right {
-    margin-left: 10px;
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .fa-chevron-right {
-    margin-left: 5px;
-  }
-}
-
 .people-say__slider__list {
   list-style: none;
   padding: 0;
@@ -1574,6 +1566,18 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.people-say__slider-prev {
+  background: url("../img/back.svg") center center no-repeat;
+  margin-right: 20px;
+}
+
+.people-say__slider-next {
+  background: url("../img/next.svg") center center no-repeat;
+  margin-left: 20px;
 }
 
 /***********
@@ -1815,12 +1819,6 @@ body {
   padding-right: 20px;
 }
 
-@media screen and (max-width: 600px) {
-  .footer__text--adress {
-    margin-bottom: 20px;
-  }
-}
-
 .footer__text--copyright {
   font-family: 'RobotoRegular', sans-serif;
   text-align: right;
@@ -1831,29 +1829,31 @@ body {
 @media screen and (max-width: 900px) {
   .footer__text--copyright {
     margin-top: 88px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .footer__text--copyright {
-    margin-top: 30px;
+    font-size: 13px;
   }
 }
 
 @media screen and (max-width: 822px) {
   .footer__text--copyright {
     text-align: center;
+    margin-top: 30px;
   }
 }
 
-.fa-map-marker-alt, .fa-phone {
-  color: #ffffff;
-  font-size: 18px;
-  margin: 0 10px 0 5px;
+.map-svg, .phone-svg {
+  width: 30px;
+  height: 20px;
 }
 
-.fa-map-marker-alt {
-  margin: 30px 17px 0 5px;
+.map-svg {
+  background: url("../img/map.svg") center center no-repeat;
+  margin: 30px 10px 0 7px;
+}
+
+.phone-svg {
+  background: url("../img/phone.svg") center center no-repeat;
+  display: inline-block;
+  width: 35px;
 }
 
 .footer__help-list {
@@ -1931,6 +1931,7 @@ body {
   margin-right: 10px;
   padding-left: 17px;
   letter-spacing: 0.4px;
+  color: rgba(65, 61, 75, 0.5);
 }
 
 @media screen and (max-width: 1000px) {
@@ -1989,14 +1990,26 @@ body {
   border-radius: 50%;
 }
 
-.social__link:hover {
-  color: #00e0d0;
-  border: 1px solid #00e0d0;
+.social__image-facebook {
+  background: url(../img/facebook.svg) center center no-repeat;
 }
 
-@media screen and (max-width: 768px) {
-  .social__link:hover {
-    color: #ffffff;
-    border: 1px solid #ffffff;
-  }
+.social__image-twitter {
+  background: url(../img/twitter.svg) center center no-repeat;
+}
+
+.social__image-dribbble {
+  background: url(../img/dribbble.svg) center center no-repeat;
+}
+
+.social__image-instagram {
+  background: url(../img/instagram.svg) center center no-repeat;
+}
+
+.social__image-google {
+  background: url(../img/google.svg) center center no-repeat;
+}
+
+.social__image-youtube {
+  background: url(../img/youtube.svg) center center no-repeat;
 }

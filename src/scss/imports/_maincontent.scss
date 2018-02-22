@@ -172,6 +172,22 @@
   @include size(220px, 307px);
   text-align: center;
   text-transform: uppercase;
+  position: relative;
+  &:hover{
+    .team__item-link:after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      background: rgba(0, 0, 0, .2) url("../img/eye_white.svg") center center no-repeat;
+    }
+  }
+
+  .team__item-link{
+    text-decoration: none;
+  }
 
   @include responsive(1000px){
     margin-bottom: 20px;
@@ -255,6 +271,20 @@
   margin: 68px auto 73px auto;
 
 }
+.works__item{
+  position: relative;
+  &:hover{
+    .works__item-link:after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      background: rgba(0, 224, 208, .3) url("../img/eye_white.svg") center center no-repeat;
+    }
+  }
+}
 
 .works__item-link{
   display: block;
@@ -326,7 +356,7 @@
 .people-say__job{
  font-size: 13px;
   font-family: 'RobotoLight', sans-serif;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 
   @include responsive(840px){
     font-size: 12px;
@@ -354,35 +384,6 @@
   }
 }
 
-.fa-chevron-left, .fa-chevron-right{
-  color: #7f7d89;
-  font-size: 26px;
-}
-
-.fa-chevron-left{
-  margin-right: 20px;
-
-  @include responsive(450px){
-    margin-right: 10px;
-  }
-
-  @include responsive(340px){
-    margin-right: 5px;
-  }
-}
-
-.fa-chevron-right{
-  margin-left: 20px;
-
-  @include responsive(450px){
-    margin-left: 10px;
-  }
-
-  @include responsive(340px){
-    margin-left: 5px;
-  }
-}
-
 .people-say__slider__list{
   list-style: none;
   padding: 0;
@@ -407,6 +408,17 @@
   background: none;
   border: none;
   cursor: pointer;
+  @include size(20px, 20px);
+}
+
+.people-say__slider-prev{
+  background: url("../img/back.svg") center center no-repeat;
+  margin-right: 20px;
+}
+
+.people-say__slider-next{
+  background: url("../img/next.svg") center center no-repeat;
+  margin-left: 20px;
 }
 
 /***********
