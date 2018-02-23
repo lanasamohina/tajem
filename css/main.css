@@ -1981,6 +1981,20 @@ body {
   margin: 31px 0 27px 0;
 }
 
+@media screen and (max-width: 600px) {
+  .subscribe {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer__column--stay-in-touch {
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .subscribe__input {
   width: 211px;
   height: 45px;

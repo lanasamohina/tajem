@@ -165,7 +165,14 @@
   flex-flow: row nowrap;
   width: 100%;
   margin: 31px 0 27px 0;
-
+  @include responsive(600px){
+    width: auto;
+  }
+}
+.footer__column--stay-in-touch{
+  @include responsive(600px){
+    align-items: center;
+  }
 }
 
 .subscribe__input{
