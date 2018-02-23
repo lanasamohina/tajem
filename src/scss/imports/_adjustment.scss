@@ -133,6 +133,7 @@ body {
     letter-spacing: 1px;
     @include exSmall{
         font-size: 18px;
+        letter-spacing: 0;
     }
     &--team{
         color: #ffffff
@@ -153,6 +154,7 @@ body {
 
     @include responsive(450px){
         letter-spacing: 0;
+        font-size: 13px;
     }
     &:after, &:before {
         content: '';

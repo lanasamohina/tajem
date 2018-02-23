@@ -102,23 +102,38 @@
 *Expertise****
 ************/
 
+.expertise__list-wrapper{
+  overflow: hidden;
+  margin: 41px auto 52px auto;
+  width: 100%;
+
+  @include responsive(1000px){
+    width: 640px;
+  }
+
+  @include responsive(700px){
+    width: 320px;
+  }
+}
+
 .expertise__list{
   list-style: none;
   padding: 0;
-  margin: 81px 0 21px 0;
-  width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
+  margin: 0 -2px -1px 0;
 }
 
 .expertise__item{
-  width: 255px;
+  width: 320px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   text-align: center;
-  margin-bottom: 76px;
+  padding: 40px 30px;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .expertise__title{
@@ -251,6 +266,11 @@
   display: block;
   letter-spacing: 0.5px;
 
+  @include exSmall{
+    letter-spacing: 0;
+    font-size: 13px;
+  }
+
   &:after{
     content: "";
     background: url("../img/right.svg") center center no-repeat;
@@ -296,7 +316,6 @@
 /**************
 **People say***
 ***************/
-
 
 .people-say{
   width: 100%;

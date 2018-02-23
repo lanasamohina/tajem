@@ -24,7 +24,6 @@
     }
 }
 
-
 /***********
 **Header***
 **********/
@@ -161,7 +160,49 @@
     text-align: center;
     max-width: 771px;
     margin: 0 auto;
+    & .slider-container{
+        height: 242px;
+        overflow: hidden;
+    }
+    & .slider-container.slick-slider{
+        height: auto;
+        overflow: auto;
+    }
 
+    .slick-dots{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row nowrap;
+        margin-top: 127px;
+        justify-content: center;
+
+        @include small{
+            margin-top: 60px;
+        }
+        & li{
+             &:not(:last-child) {
+                 margin-right: 5px;
+             }
+             &.slick-active{
+                 & button{
+                     border: 1px solid $main-color;
+                     background: $main-color;
+                 }
+             }
+             & button{
+                 content: '';
+                 font-size: 0;
+                 padding: 0;
+                 @include size(10px, 10px);
+                 background: none;
+                 border: 1px solid #c2c2c2;
+                 border-radius: 50%;
+                 cursor: pointer;
+             }
+         }
+    }
 }
 
 .hero__title {
@@ -229,38 +270,4 @@
     }
 }
 
-.hero__slider-dots-list{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-flow: row nowrap;
-    margin-top: 127px;
-    justify-content: center;
-
-    @include small{
-        margin-top: 60px;
-    }
-}
-
-.hero__slider-dots-item{
-  &:not(:last-child) {
-    margin-right: 5px;
-  }
-  &--active{
-    .hero__slider-dots-btn{
-      border: 1px solid $main-color;
-      background: $main-color;
-    }
-  }
-}
-
-.hero__slider-dots-btn{
-  padding: 0;
-  @include size(10px, 10px);
-  background: none;
-  border: 1px solid #c2c2c2;
-  border-radius: 50%;
-  cursor: pointer;
-}
 
