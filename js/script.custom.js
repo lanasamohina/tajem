@@ -65,5 +65,15 @@ $(function () {
             btn.removeAttr('disabled');
         })
     })();
+
+    $('#header-slider').slick({
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        speed: 700,
+        cssEase: 'ease'
+    });
+
     
 })
