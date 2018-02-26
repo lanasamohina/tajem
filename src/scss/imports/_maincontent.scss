@@ -37,10 +37,6 @@
     padding-left: 0;
   }
 
-  @include responsive(700px){
-    padding-left: 20px;
-  }
-
   @include responsive(710px){
     width: 100%;
     text-align: center;
