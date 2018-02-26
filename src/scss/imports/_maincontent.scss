@@ -180,10 +180,19 @@
 
 .team__item{
   border: 1px solid rgba(124, 120, 144, .5);
-  @include size(220px, 307px);
+  @include size(223px, 307px);
   text-align: center;
   text-transform: uppercase;
   position: relative;
+  & .team__item-link:after{
+    width: 0;
+    height: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
   &:hover{
     .team__item-link:after{
       content: "";
@@ -193,6 +202,7 @@
       left: 0;
       @include size(100%, 100%);
       background: rgba(0, 0, 0, .2) url("../img/eye_white.svg") center center no-repeat;
+      transition: left .3s ease-in-out, width .3s ease-in-out;
     }
   }
 
@@ -289,6 +299,15 @@
 }
 .works__item{
   position: relative;
+  & .works__item-link:after{
+    width: 0;
+    height: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
   &:hover{
     .works__item-link:after{
       content: "";
@@ -297,7 +316,8 @@
       top: 0;
       left: 0;
       @include size(100%, 100%);
-      background: rgba(0, 224, 208, .3) url("../img/eye_white.svg") center center no-repeat;
+      background: rgba(0, 224, 208, .2) url("../img/eye_white.svg") center center no-repeat;
+      transition: left .3s ease-in-out, width .3s ease-in-out;
     }
   }
 }

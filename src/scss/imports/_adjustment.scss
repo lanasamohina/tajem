@@ -42,7 +42,6 @@ body {
         width: 650px;
     }
 
-
     @include small{
         width: auto;
     }
@@ -62,6 +61,8 @@ body {
     font-size: 16px;
     text-transform: uppercase;
     text-align: center;
+    transition: color .2s ease-in-out,
+                border .2s ease-in-out;
 
     @include small {
         @include size(112px, 32px);

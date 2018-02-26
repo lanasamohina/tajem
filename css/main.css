@@ -566,6 +566,7 @@ body {
   font-size: 16px;
   text-transform: uppercase;
   text-align: center;
+  transition: color .2s ease-in-out, border .2s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
@@ -1307,11 +1308,21 @@ body {
 
 .team__item {
   border: 1px solid rgba(124, 120, 144, 0.5);
-  width: 220px;
+  width: 223px;
   height: 307px;
   text-align: center;
   text-transform: uppercase;
   position: relative;
+}
+
+.team__item .team__item-link:after {
+  width: 0;
+  height: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
 }
 
 .team__item:hover .team__item-link:after {
@@ -1323,6 +1334,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2) url("../img/eye_white.svg") center center no-repeat;
+  transition: left .3s ease-in-out, width .3s ease-in-out;
 }
 
 .team__item .team__item-link {
@@ -1436,6 +1448,16 @@ body {
   position: relative;
 }
 
+.works__item .works__item-link:after {
+  width: 0;
+  height: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
 .works__item:hover .works__item-link:after {
   content: "";
   display: block;
@@ -1444,7 +1466,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 224, 208, 0.3) url("../img/eye_white.svg") center center no-repeat;
+  background: rgba(0, 224, 208, 0.2) url("../img/eye_white.svg") center center no-repeat;
+  transition: left .3s ease-in-out, width .3s ease-in-out;
 }
 
 .works__item-link {
@@ -1995,7 +2018,6 @@ body {
   margin-right: 10px;
   padding-left: 17px;
   letter-spacing: 0.4px;
-  color: rgba(65, 61, 75, 0.5);
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
