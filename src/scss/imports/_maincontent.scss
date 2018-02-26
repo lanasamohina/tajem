@@ -290,12 +290,30 @@
 .works__list{
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
   max-width: 1602px;
   list-style: none;
   padding: 0;
   margin: 68px auto 73px auto;
 
+  @include responsive(1619px){
+    max-width: 1335px;
+  }
+
+  @include responsive(1351px){
+    max-width: 1068px;
+  }
+
+  @include responsive(1084px){
+    max-width: 801px;
+  }
+
+  @include responsive(817px){
+    max-width: 534px;
+  }
+
+  @include responsive(557px){
+    max-width: 267px;
+  }
 }
 .works__item{
   position: relative;
@@ -492,6 +510,7 @@
   font-size: 14px;
   &--textarea{
     padding-bottom: 18px;
+    resize: none;
   }
   @include placeholder{
     font-family: 'RobotoLight', sans-serif;
